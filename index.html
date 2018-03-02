@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Firing fields of grid cells</title>
+		<link
+			href="http://fonts.googleapis.com/css?family=Lato:300"
+			rel="stylesheet"
+			type="text/css"
+		/>
+	    <style>
+	    	body{
+	    		margin: 0;
+	    		padding: 0;
+	    		background-color:  #fff;
+	    		color: #000;
+	    		font-weight: 300;
+	    		cursor: default;
+	    		font-family: "Lato", "Helvetica", serif;
+	    		-moz-user-select: none;
+			  	-webkit-user-select: none;
+			  	-ms-user-select: none;
+	    	}
+	    	a {
+	    		text-decoration: none;
+	    	}
+	    	.unselectable {
+			  -moz-user-select: none;
+			  -webkit-user-select: none;
+			  -ms-user-select: none;
+			}
+			#canvas-container {
+				position: relative;
+				height: 300px;
+				width: 300px;
+				background-color: #fff;
+				border: 1px solid #ddd;
+			}
+			.navbar {
+				height: 40px;
+				/*background-color: #aaa;*/
+				border: 1px solid #fff;
+			}
+			.navbar .btn, .navbar .label{
+				float: left;
+				
+				border-right: 2px solid #fff;
+				height: 40px;
+				line-height: 40px;
+				
+			}
+			.navbar .btn {
+				color: #000;
+				width: 40px;
+				text-align: center;
+				background-color: #ccc;
+			}
+			.navbar .btn:active {
+				color: #000;
+				background-color: #eee;
+			}
+			.navbar .label{
+				font-size: 1em;
+				padding: 0px 10px 0 15px;
+			}
+			#color-palette {
+				height: 50px;
+				background-color: #ccc;
+				border: 0px solid #fff;
+			}
+			#color-palette .color{
+				float: left;
+				width: 30px;
+				border-right: 2px solid #fff;
+				height: 50px;
+			}
+			.clear { clear: right; }
+	    </style>
+	</head>
+	<body clas="unselectable">
+		<div style="padding: 0 50px 0 50px; width: 300px; margin: auto auto;"> 
+			
+			<div style="height: 3em; line-height: 3em; font-size: 1.5em;">Grid cells <span style="height: 1em; line-height: 1em; font-size: 0.6em;">A visualization of their firing fields</span></div>
+
+			<div id="canvas-container"><canvas id="environment-canvas" width="300" height="300"></canvas></div>
+			<div class="label" style="padding: 20px 150px 20px 0px;">Select a cell you want to listen to:</div>
+			<div id="cell-navbar" class="navbar">
+				<div class="btn" event="switchcell" toggled="1" value="0">a</div>
+				<div class="btn" event="switchcell" toggled="0" value="1">b</div>
+				<div class="btn" event="switchcell" toggled="0" value="2">c</div>
+			</div>
+			<div class="label" style="padding: 20px 150px 20px 0px;">Change the speed of time:</div>
+			<div id="navbar" class="navbar">
+				<div class="btn" event="speedup"  value="1">+1</div>
+				<div class="btn" event="speeddown"  value="-1">-1</div>
+				<div class="btn" event="speedreset"  value="-1">=1</div>
+			</div>
+			   <!-- <div style="display:none;"> -->
+				 <!-- <canvas id="hidden-canvas"></canvas> -->
+				 <!-- <img src="media/shadow.png" alt="Smiley face" id="shadow" width="30" height="30"> -->
+			   <!-- </div> -->
+		</div>
+		<script type="text/javascript" src="helper.js"></script>
+    	<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
